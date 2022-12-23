@@ -1,11 +1,15 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import {QueryClientProvider, QueryClient} from 'react-query'
 import '../style/App.css'
 import {HomePage} from './Home.page'
 import {RQSuperHeroesPage} from './RQSuperHeroes.page'
 import {SuperHeroesPage} from './SuperHeroes.page'
 
+const queryClient = new QueryClient()
+
 function App() {
     return (
+        <QueryClientProvider client={queryClient}>
         <Router>
             <>
                 <nav>
@@ -28,6 +32,7 @@ function App() {
                 </Routes>
             </>
         </Router>
+    </QueryClientProvider>
     )
 }
 

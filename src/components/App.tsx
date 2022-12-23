@@ -1,8 +1,8 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
-import './App.css'
-import {HomePage} from './components/Home.page'
-import {RQSuperHeroesPage} from './components/RQSuperHeroes.page'
-import {SuperHeroesPage} from './components/SuperHeroes.page'
+import '../style/App.css'
+import {HomePage} from './Home.page'
+import {RQSuperHeroesPage} from './RQSuperHeroes.page'
+import {SuperHeroesPage} from './SuperHeroes.page'
 
 function App() {
     return (

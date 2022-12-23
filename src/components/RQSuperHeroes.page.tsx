@@ -5,11 +5,25 @@ const fetchSuperHeroes = () => {
     return axios.get('http://localhost:4000/superheroes')
 }
 
+type QueryResult = {
+    isLoading: boolean,
+    data: any,
+    isError: boolean,
+    error: any
+}
+
 export const RQSuperHeroesPage = () => {
-    const {isLoading, data} = useQuery('super-heroes', fetchSuperHeroes)
+    const {isLoading, data, isError, error}: QueryResult = useQuery(
+        'super-heroes',
+        fetchSuperHeroes
+    )
 
     if (isLoading) {
         return <h2>Loading...</h2>
+    }
+
+    if (isError) {
+        return <h2>{error.message}</h2>
     }
 
     return (
